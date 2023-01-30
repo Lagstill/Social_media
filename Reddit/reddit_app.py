@@ -8,6 +8,7 @@ import plotly.express as px
 from datetime import datetime as dt
 from wordcloud import WordCloud, STOPWORDS
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import requests
 from PIL import Image
 
 
@@ -32,7 +33,7 @@ def get_user_data(username):
     return user
 
 #change background color to black
-st.markdown('<link rel="stylesheet" type="text/css" href="custom.css">', unsafe_allow_html=True)
+# st.markdown('<link rel="stylesheet" type="text/css" href="custom.css">', unsafe_allow_html=True)
 
 # create the streamlit app
 st.title("Reddit User Analysis 👀")
@@ -40,7 +41,14 @@ st.title("Reddit User Analysis 👀")
 st.write("Keep scrolling....")
 
 # create a background image
-image = Image.open('reddit.jpg')
+# image = Image.open('reddit.jpg')
+# Get the image from the GitHub repository
+img_url = "https://github.com/Lagstill/Social_media/blob/main/Reddit/reddit.jpg"
+response = requests.get(img_url)
+
+# Open the image using PIL
+image = Image.open(requests.get(img_url, stream=True).raw)
+
 st.image(image, use_column_width=True ,caption='Reddit is a social news aggregation, web content rating, and discussion website. Registered members submit content to the site such as links, text posts, and images, which are then voted up or down by other members. Content entries are organized by areas of interest called "subreddits".', width=800)
 
 # create a sidebar
