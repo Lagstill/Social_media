@@ -43,12 +43,12 @@ st.write("Keep scrolling....")
 # create a background image
 # image = Image.open('reddit.jpg')
 # Get the image from the GitHub repository
-img_url = "https://github.com/Lagstill/Social_media/blob/main/Reddit/reddit.jpg"
-response = requests.get(img_url)
+# img_url = "https://github.com/Lagstill/Social_media/blob/main/Reddit/reddit.jpg"
+# response = requests.get(img_url)
 
 # Open the image using PIL
-image = Image.open(requests.get(img_url, stream=True).raw)
-
+# image = Image.open(requests.get(img_url, stream=True).raw)
+image = "reddit.jpg"
 st.image(image, use_column_width=True ,caption='Reddit is a social news aggregation, web content rating, and discussion website. Registered members submit content to the site such as links, text posts, and images, which are then voted up or down by other members. Content entries are organized by areas of interest called "subreddits".', width=800)
 
 # create a sidebar
