@@ -8,3 +8,5 @@ plotly
 wordcloud
 requests
 pillow
+nltk
+vaderSentiment
